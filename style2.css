@@ -100,3 +100,26 @@ font-size: 25px;
 a {
   text-decoration: none;
 }
+/* Default styling (for laptops and larger screens) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* For tablets (width less than 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+/* For phones (width less than 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
