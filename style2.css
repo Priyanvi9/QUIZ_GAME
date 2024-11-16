@@ -76,10 +76,10 @@
   align-items: center;
   justify-content: center;
   height: 500px;
- background-image: url("bgi2.png");
+/*  background-image: url("bgi2.png");
   background-attachment: fixed;
   background-size: cover;
-  background-position: center; 
+  background-position: center;  */
  }
 .subject {
   text-decoration: none;
