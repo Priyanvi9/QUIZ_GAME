@@ -1,0 +1,38 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+h1 {
+  text-align: center;
+  background-color: #d6d637;
+  color: chocolate;
+  margin-bottom: 250px;
+}
+#maingame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  margin-left: 500px;
+  margin-right: 500px;
+  background-color: rgb(219, 219, 69);
+  color: #e9670b;
+}
+#START {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+}
+body {
+  background-image: url("/bgi-homepage.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+#message {
+  text-align: center;
+  background-color: #8bce0e;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+}
