@@ -58,12 +58,7 @@
   margin: 0%;
   padding: 0%;
 }
-/*  body { */
-  /* background-image: url("bgi2.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: color; */
+
  h1 {
   text-align: center;
   background-color: blue;
@@ -76,10 +71,6 @@
   align-items: center;
   justify-content: center;
   height: 500px;
-/*  background-image: url("bgi2.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;  */
  }
 .subject {
   text-decoration: none;
