@@ -24,7 +24,7 @@ h1 {
   color: inherit;
 }
 body {
-  background-image: url("/bgi-homepage.png");
+  background-image: url("bgi-homepage.png");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
