@@ -2,12 +2,7 @@
   margin: 0%;
   padding: 0%;
 }
-/* body {
-  /* background-image: url("bgi2.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: color; */
+
 h1 {
   text-align: center;
   background-color: blue;
@@ -20,14 +15,10 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 500px;
-  /* background-image: url("/bgi2.png");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center; */
 }
 .subject {
   text-decoration: none;
-  /* text-align: center; */
+  text-align: center;
   font-size: 25px;
   color: inherit;
 }
@@ -44,7 +35,7 @@ h1 {
   background-color: black;
   color: white;
   height: 70px;
-  /* padding-bottom: 5px; */
+  padding-bottom: 5px;
 }
 .p {
   text-align: center;

@@ -1,5 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+
+        <button type="button" onclick="submitFeedback()">Submit</button>
+    </form>
+
+    <script>
+        function submitFeedback() {
+            // Get user name
+            const userName = document.getElementById("name").value;
+
+            // Display thank you message
+            alert(`Thank you, ${userName}, for your valuable feedback! We appreciate your effort to help us improve.`);
+
+            // Clear the form (optional)
+            document.getElementById("feedbackForm").reset();
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,6 +133,11 @@
         background-color: #45a049;
       }
     </style>
+    <script>
+      document.getelementbyId("submits").onclick=function(){
+        alert("Thank you for your valuable feedbak. We surely take a insight of it");
+      }
+    </script>
   </head>
   <body>
     <h2>We Value Your Feedback!</h2>
@@ -60,7 +146,7 @@
       moment to share your feedback with us.
     </p>
 
-    <form action="/submit-feedback" method="POST">
+    <form action="submit-feedback" method="POST">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required />
 
@@ -70,7 +156,8 @@
       <label for="feedback">Your Feedback/Suggestion:</label>
       <textarea id="feedback" name="feedback" required></textarea>
 
-      <input type="submit" value="Submit Feedback" />
+      <input type="submit" value="Submit Feedback" id="submits"/>
     </form>
   </body>
 </html>
+ -->
