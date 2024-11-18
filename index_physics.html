@@ -3,7 +3,197 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Physics Quiz</title>
+    <title>Physics-quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: blue;
+        color: #333;
+      }
+
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: #0fb0c5;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(11, 145, 93, 0.1);
+      }
+
+      .question {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .options {
+        list-style: none;
+        padding: 0;
+      }
+
+      .options li {
+        margin-bottom: 10px;
+      }
+
+      .options input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .btn-container {
+        margin-top: 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      .btn:hover {
+        background: #0056b3;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: green;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="quiz-container">
+      <h1>MCQ Quiz</h1>
+      <div id="quiz-content">
+        <!-- Quiz content will be dynamically loaded here -->
+      </div>
+      <div class="btn-container">
+        <button class="btn" id="next-btn" onclick="nextQuestion()">Next</button>
+        <button
+          class="btn"
+          id="submit-btn"
+          onclick="submitQuiz()"
+          style="display: none"
+        >
+          Submit
+        </button>
+      </div>
+      <div id="result" class="result"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "1. What is the nature of atom?",
+          options: ["No-charge", "Positive", "Neutral", "None of the above"],
+          answer: "Neutral",
+        },
+        {
+          question:
+            "2. What is the name of the law sin(i)/sin(r) = constant(n?",
+          options: ["Reflection", "Refraction", "Kirchoff Law", "Snell's Law"],
+          answer: "Snell's Law",
+        },
+        {
+          question: "3. Which planet is known as the Red Planet?",
+          options: ["Earth", "Mars", "Jupiter", "Saturn"],
+          answer: "Mars",
+        },
+        {
+          question: "4. Which planet is known as the Red Planet?",
+          options: ["Earth", "Mars", "Jupiter", "Saturn"],
+          answer: "Mars",
+        },
+      ];
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+
+      const quizContent = document.getElementById("quiz-content");
+      const nextBtn = document.getElementById("next-btn");
+      const submitBtn = document.getElementById("submit-btn");
+      const resultDiv = document.getElementById("result");
+
+      // Load the first question
+      loadQuestion();
+
+      function loadQuestion() {
+        const questionData = questions[currentQuestionIndex];
+        quizContent.innerHTML = `
+        <div class="question">${questionData.question}</div>
+        <ul class="options">
+          ${questionData.options
+            .map(
+              (option, index) => `
+            <li>
+              <label>
+                <input type="radio" name="q${currentQuestionIndex}" value="${option}">
+                ${option}
+              </label>
+            </li>
+          `
+            )
+            .join("")}
+        </ul>
+      `;
+      }
+
+      function nextQuestion() {
+        // Check if the user selected an answer
+        const selectedOption = document.querySelector(
+          `input[name="q${currentQuestionIndex}"]:checked`
+        );
+
+        if (!selectedOption) {
+          alert("Please select an answer!");
+          return;
+        }
+
+        // Check the answer
+        if (selectedOption.value === questions[currentQuestionIndex].answer) {
+          score++;
+        }
+
+        // Move to the next question
+        currentQuestionIndex++;
+
+        // If it's the last question, show the Submit button
+        if (currentQuestionIndex >= questions.length - 1) {
+          nextBtn.style.display = "none";
+          submitBtn.style.display = "inline-block";
+        }
+
+        // Load the next question
+        if (currentQuestionIndex < questions.length) {
+          loadQuestion();
+        }
+      }
+
+      function submitQuiz() {
+        // Check the last question's answer
+        const selectedOption = document.querySelector(
+          `input[name="q${currentQuestionIndex}"]:checked`
+        );
+
+        if (
+          selectedOption &&
+          selectedOption.value === questions[currentQuestionIndex].answer
+        ) {
+          score++;
+        }
+
+        // Show the result
+        quizContent.innerHTML = "";
+        nextBtn.style.display = "none";
+        submitBtn.style.display = "none";
+        resultDiv.textContent = `You scored ${score} out of ${questions.length}.`;
+      }
+    </script>
+  </body>
 </html>
