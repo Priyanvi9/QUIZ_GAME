@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-function askName() {
-  const name = prompt("Please enter your name : ");
-  const messageElement = document.getElementById("message");
-  if (name) {
-    messageElement.innerHTML = `Welcome, <strong>${name}</strong>! Test your abilities`;
-  } else {
-    messageElement.innerHTML = `NA NA Nam to dalna pdega, <br> no worry fill the name again and see magic`;
-  }
-}
-{
-  /* <div class="custom-alert" id="customConfirm" style="display: none;">
+/* <div class="custom-alert" id="customConfirm" style="display: none;">
   <p>Are you sure you want to proceed?</p>
   <button onclick="confirmAction(true)">Yes</button>
   <button onclick="confirmAction(false)">No</button>
@@ -31,8 +20,6 @@ function askName() {
     }
   }
 </script> */
-}
-=======
 function askName() {
   const name = prompt("Please enter your name : ");
   const messageElement = document.getElementById("message");
@@ -42,8 +29,8 @@ function askName() {
     messageElement.innerHTML = `NA NA Nam to dalna pdega, <br> no worry fill the name again and see magic`;
   }
 }
-{
-  /* <div class="custom-alert" id="customConfirm" style="display: none;">
+
+/* <div class="custom-alert" id="customConfirm" style="display: none;">
   <p>Are you sure you want to proceed?</p>
   <button onclick="confirmAction(true)">Yes</button>
   <button onclick="confirmAction(false)">No</button>
@@ -65,5 +52,3 @@ function askName() {
     }
   }
 </script> */
-}
->>>>>>> ed6de47abcf6189c01c835b4446180a4c2d4a30e
